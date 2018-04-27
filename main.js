@@ -1,34 +1,120 @@
 document.addEventListener('DOMContentLoaded', function() {
   let eosButton
-  let prometeosButton
+  let prometheosButton
+
+  const toEos = () => {
+
+    eosButton = document.getElementsByClassName('upper-button')[0]
+    eosButton.id = 'eos-button'
+    eosButton.innerHTML = "<img src='./assets/about/eos-text.png' id='eos-button-img' style='visibility: hidden;'> <button id='eos-button-btn' style='visibility: hidden;'> <span style='font-weight: bold;'>EOS</span><span>.io</span> </button>"
+    prometheosButton = document.getElementsByClassName('lower-button')[0]
+    prometheosButton.innerHTML = "<button > <span>PROMETH</span> <span style='font-weight: bold;'>EOS</span> </button>"
+
+
+    setTimeout(() => {
+      document.getElementById("eos-button-btn").style.visibility = "visible"
+      document.getElementById("eos-button-btn").style.animation = "grow-up .5s linear forwards"
+      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/eos-logo.svg)'
+      document.getElementsByClassName('about-logo')[0].style.animation = "appear 1s linear forwards"
+    }, 400)
+
+    setTimeout(() => {
+      document.getElementById("eos-button-img").style.visibility = "visible"
+      document.getElementById("eos-button-img").style.animation = "grow-up .5s linear forwards"
+    }, 1200)
+
+    setTimeout(() => {
+      document.getElementById("eos-text-p1").style.visibility = "visible"
+      document.getElementById("eos-text-p1").style.animation = "grow-up .5s linear forwards"
+    }, 2000)
+
+    setTimeout(() => {
+      document.getElementById("eos-text-p2").style.visibility = "visible"
+      document.getElementById("eos-text-p2").style.animation = "grow-up .5s linear forwards"
+    }, 2800)
+
+    setTimeout(() => {
+      document.getElementById("eos-text-p3").style.visibility = "visible"
+      document.getElementById("eos-text-p3").style.animation = "grow-up .5s linear forwards"
+    }, 3600)
+
+
+    document.getElementsByClassName('prometheos-text')[0].style.display = 'none'
+    document.getElementsByClassName('eos-text')[0].style.display = 'block'
+
+
+    document.getElementById("eos-button-img").style.visibility = "hidden"
+    document.getElementById("eos-button-img").style.animation = ""
+
+    document.getElementById("eos-text-p1").style.visibility = "hidden"
+    document.getElementById("eos-text-p1").style.animation = ""
+
+    document.getElementById("eos-text-p2").style.visibility = "hidden"
+    document.getElementById("eos-text-p2").style.animation = ""
+
+    document.getElementById("eos-text-p3").style.visibility = "hidden"
+    document.getElementById("eos-text-p3").style.animation = ""
+
+  }
+
+  const toPrometheos = () => {
+
+    prometheosButton = document.getElementsByClassName('upper-button')[0]
+    prometheosButton.id = 'prometheos-button'
+    prometheosButton.innerHTML =
+      "<img src='./assets/about/prometheos-text.png' id='prometheos-button-img' style='visibility: hidden;'> <button id='prometheos-button-btn' style='visibility: hidden;'> <span>PROMETH</span><span style='font-weight: bold;'>EOS</span> </button> <p id='prometheos-button-p' style='visibility: hidden;'>Prometheos aims to build a token-based blockchain travel distribution platform</p>"
+    eosButton = document.getElementsByClassName('lower-button')[0]
+    eosButton.innerHTML = "<button ><span style='font-weight: bold;'>EOS</span>.io</button>"
+
+    setTimeout(() => {
+      document.getElementById("prometheos-button-btn").style.visibility = "visible"
+      document.getElementById("prometheos-button-btn").style.animation = "grow-up .5s linear forwards"
+      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/prometheos-logo.svg)'
+      document.getElementsByClassName('about-logo')[0].style.animation = "appear 1s linear forwards"
+    }, 400)
+
+    setTimeout(() => {
+      document.getElementById("prometheos-button-img").style.visibility = "visible"
+      document.getElementById("prometheos-button-img").style.animation = "grow-up .5s linear forwards"
+      document.getElementById("prometheos-button-p").style.visibility = "visible"
+      document.getElementById("prometheos-button-p").style.animation = "grow-up .5s linear forwards"
+    }, 1200)
+
+    setTimeout(() => {
+      document.getElementById("prometheos-text-p").style.visibility = "visible"
+      document.getElementById("prometheos-text-p").style.animation = "grow-up .5s linear forwards"
+    }, 2000)
+
+    setTimeout(() => {
+      document.getElementById("prometheos-text-ul").style.visibility = "visible"
+      document.getElementById("prometheos-text-ul").style.animation = "grow-up .5s linear forwards"
+    }, 2800)
+
+    
+    document.getElementsByClassName('eos-text')[0].style.display = 'none'
+    document.getElementsByClassName('prometheos-text')[0].style.display = 'block'
+
+
+    document.getElementById("prometheos-button-img").style.visibility = "hidden"
+    document.getElementById("prometheos-button-img").style.animation = ""
+    document.getElementById("prometheos-button-p").style.visibility = "hidden"
+    document.getElementById("prometheos-button-p").style.animation = ""
+
+    document.getElementById("prometheos-text-p").style.visibility = "hidden"
+    document.getElementById("prometheos-text-p").style.animation = ""
+
+    document.getElementById("prometheos-text-ul").style.visibility = "hidden"
+    document.getElementById("prometheos-text-ul").style.animation = ""
+
+  }
 
   const changeButton = function() {
-    if (document.getElementsByClassName('upper-button')[0].id === 'prometeos-button') {
-      eosButton = document.getElementsByClassName('upper-button')[0]
-      eosButton.id = 'eos-button'
-      eosButton.innerHTML = "<img src='./assets/about/eos-text.png'> <button> <span style='font-weight: bold;'>EOS</span>.io </button>"
-
-      prometeosButton = document.getElementsByClassName('lower-button')[0]
-      prometeosButton.id = 'prometeos-button'
-      prometeosButton.innerHTML = "<button> <span>PROMETH</span> <span style='font-weight: bold;'>EOS</span> </button>"
-
-      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/eos-logo.svg)'
-      document.getElementsByClassName('prometeos-text')[0].style.display = 'none'
-      document.getElementsByClassName('eos-text')[0].style.display = 'block'
+    if (document.getElementsByClassName('upper-button')[0].id === 'prometheos-button') {
+      toEos()
     } else {
-      prometeosButton = document.getElementsByClassName('upper-button')[0]
-      prometeosButton.id = 'prometeos-button'
-      prometeosButton.innerHTML =
-        "<img src='./assets/about/prometeos-text.png'> <button> <span>PROMETH</span><span style='font-weight: bold;'>EOS</span> </button> <p>Prometheos aims to build a token-based blockchain travel distribution platform</p>"
-
-      eosButton = document.getElementsByClassName('lower-button')[0]
-      eosButton.id = 'eos-button'
-      eosButton.innerHTML = "<button><span style='font-weight: bold;'>EOS</span>.io</button>"
-
-      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/prometeos-logo.svg)'
-      document.getElementsByClassName('eos-text')[0].style.display = 'none'
-      document.getElementsByClassName('prometeos-text')[0].style.display = 'block'
+      toPrometheos()
     }
+    
   }
 
   document.getElementsByClassName('lower-button')[0].addEventListener('click', changeButton)

@@ -251,10 +251,11 @@ header .social-media img {
 }
 
 .about .about-logo {
-  background-image: url('./assets/about/prometeos-logo.svg');
+  background-image: url('./assets/about/prometheos-logo.svg');
   background-repeat: no-repeat;
   background-size: 65% 65%;
   background-position: 75% 50%;
+  animation: appear 1s linear forwards;
 }
 
 .about .about-logo .title {
@@ -293,7 +294,7 @@ header .social-media img {
   margin-left: 30vw;
 }
 
-.about .about-logo .about-buttons #prometeos-button,
+.about .about-logo .about-buttons #prometheos-button,
 .about .about-logo .about-buttons #eos-button {
   display: flex;
   justify-content: flex-start;
@@ -302,14 +303,14 @@ header .social-media img {
   font-family: 'GT-America-Trial-Light';
 }
 
-.about .about-logo .about-buttons #prometeos-button img,
+.about .about-logo .about-buttons #prometheos-button img,
 .about .about-logo .about-buttons #eos-button img {
   height: 1.4em;
   width: auto;
   position: relative;
 }
 
-.about .about-logo .about-buttons #prometeos-button p {
+.about .about-logo .about-buttons #prometheos-button p {
   width: 40vw;
   height: 10vh;
   font-size: 1.2em;
@@ -326,7 +327,21 @@ header .social-media img {
 }
 
 .about .about-logo .about-buttons .upper-button button {
+  overflow: hidden;
   font-size: 4.5em;
+}
+
+.about .about-logo .about-buttons .upper-button img {
+  transform-origin: bottom;
+}
+
+.about .about-logo .about-buttons .upper-button p {
+  transform-origin: bottom;
+}
+
+.about .about-logo .about-buttons .upper-button button span{
+  transform-origin: bottom;
+  animation: grow-up .5s linear forwards;
 }
 
 .about .about-logo .about-buttons .lower-button button {
@@ -341,7 +356,7 @@ header .social-media img {
   height: justify;
 }
 
-.about .about-text .prometeos-text {
+.about .about-text .prometheos-text {
   font-family: 'GT-America-Trial-Light';
   width: 35vw;
   font-size: 1.2em;
@@ -350,11 +365,11 @@ header .social-media img {
   margin-right: 5vw;
 }
 
-.about .about-text .prometeos-text p #colon {
+.about .about-text .prometheos-text p #colon {
   font-family: Arial;
 }
 
-.about .about-text .prometeos-text ul li .bold {
+.about .about-text .prometheos-text ul li .bold {
   font-weight: bolder;
 }
 
@@ -365,4 +380,28 @@ header .social-media img {
   color: #727275;
   margin-bottom: 10vh;
   margin-right: 5vw;
+}
+
+@keyframes grow-up {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  from {
+    background-size: 0 0;
+    opacity: 0;
+  }
+
+  to {
+    background-size: 65% 65%;
+    opacity: 1;
+  }
 }
