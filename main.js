@@ -27,13 +27,15 @@ document.addEventListener('DOMContentLoaded', function() {
     eosButton.id = 'eos-button'
     eosButton.innerHTML = "<img src='./assets/about/eos-text.png' id='eos-button-img' style='visibility: hidden;'> <button id='eos-button-btn' style='visibility: hidden;'> <span style='font-weight: bold;'>EOS</span><span>.io</span> </button>"
     prometheosButton = document.getElementsByClassName('lower-button')[0]
-    prometheosButton.innerHTML = "<button > <span>PROMETH</span> <span style='font-weight: bold;'>EOS</span> </button>"
+    prometheosButton.innerHTML = "<button class='disabled' style='animation: '';'> <span>PROMETH</span> <span style='font-weight: bold;'>EOS</span> </button>"
+    document.getElementsByClassName('disabled')[0].style.position = "absolute"
+    document.getElementsByClassName('disabled')[0].style.zIndex = "-1"
 
     setTimeout(() => {
       document.getElementById("eos-button-btn").style.visibility = "visible"
       document.getElementById("eos-button-btn").style.animation = "grow-up .5s linear forwards"
       document.getElementsByClassName('backgroundImg')[0].style.backgroundImage = 'url(./assets/about/eos-logo.svg)'
-      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear forwards"
+      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear both"
     }, 400)
 
     setTimeout(() => {
@@ -56,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("eos-text-p3").style.animation = "grow-up .5s linear forwards"
     }, 3600)
 
+    setTimeout(() => {
+      document.getElementsByClassName('disabled')[0].style.zIndex = "0"
+      document.getElementsByClassName('disabled')[0].style.animation = "appear 1s linear forwards"
+    },4000)
 
     document.getElementsByClassName('prometheos-text')[0].style.display = 'none'
     document.getElementsByClassName('eos-text')[0].style.display = 'block'
@@ -82,13 +88,15 @@ document.addEventListener('DOMContentLoaded', function() {
     prometheosButton.innerHTML =
       "<img src='./assets/about/prometheos-text.png' id='prometheos-button-img' style='visibility: hidden;'> <button id='prometheos-button-btn' style='visibility: hidden;'> <span>PROMETH</span><span style='font-weight: bold;'>EOS</span> </button> <p id='prometheos-button-p' style='visibility: hidden;'>Prometheos aims to build a token-based blockchain travel distribution platform</p>"
     eosButton = document.getElementsByClassName('lower-button')[0]
-    eosButton.innerHTML = "<button ><span style='font-weight: bold;'>EOS</span>.io</button>"
+    eosButton.innerHTML = "<button class='disabled' style='animation: '';'><span style='font-weight: bold;'>EOS</span>.io</button>"
+    document.getElementsByClassName('disabled')[0].style.position = "absolute"
+    document.getElementsByClassName('disabled')[0].style.zIndex = "-1"
 
     setTimeout(() => {
       document.getElementById("prometheos-button-btn").style.visibility = "visible"
       document.getElementById("prometheos-button-btn").style.animation = "grow-up .5s linear forwards"
       document.getElementsByClassName('backgroundImg')[0].style.backgroundImage = 'url(./assets/about/prometheos-logo.svg)'
-      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear forwards"
+      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear both"
     }, 400)
 
     setTimeout(() => {
@@ -108,6 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
       document.getElementById("prometheos-text-ul").style.animation = "grow-up .5s linear forwards"
     }, 2800)
 
+    setTimeout(() => {
+      document.getElementsByClassName('disabled')[0].style.zIndex = "0"
+      document.getElementsByClassName('disabled')[0].style.animation = "appear 1s linear forwards"
+    }, 3200)
     
     document.getElementsByClassName('eos-text')[0].style.display = 'none'
     document.getElementsByClassName('prometheos-text')[0].style.display = 'block'

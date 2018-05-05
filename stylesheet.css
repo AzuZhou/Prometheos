@@ -260,7 +260,7 @@ header .social-media img {
   background-image: url('./assets/about/prometheos-logo.svg');
   background-repeat: no-repeat;
   background-position: 75% 50%;
-  animation: appear 2s linear forwards;
+  opacity: 0;
 }
 
 .about .about-logo .title {
@@ -360,6 +360,7 @@ header .social-media img {
   color: #1213a4;
   width: justify;
   height: justify;
+  opacity: 0;
 }
 
 .about .about-text .prometheos-text {
