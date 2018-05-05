@@ -2,6 +2,25 @@ document.addEventListener('DOMContentLoaded', function() {
   let eosButton
   let prometheosButton
 
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        })
+    })
+})
+  
+  window.onscroll = function() {
+    if ( window.scrollY >= 702 ) {
+      if (document.getElementsByClassName('about-logo')[0].id === 'empty') {
+        document.getElementsByClassName('about-logo')[0].id = 'notEmpty'
+        toPrometheos()
+      } 
+    }
+  }
+
   const toEos = () => {
 
     eosButton = document.getElementsByClassName('upper-button')[0]
@@ -10,12 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
     prometheosButton = document.getElementsByClassName('lower-button')[0]
     prometheosButton.innerHTML = "<button > <span>PROMETH</span> <span style='font-weight: bold;'>EOS</span> </button>"
 
-
     setTimeout(() => {
       document.getElementById("eos-button-btn").style.visibility = "visible"
       document.getElementById("eos-button-btn").style.animation = "grow-up .5s linear forwards"
-      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/eos-logo.svg)'
-      document.getElementsByClassName('about-logo')[0].style.animation = "appear 1s linear forwards"
+      document.getElementsByClassName('backgroundImg')[0].style.backgroundImage = 'url(./assets/about/eos-logo.svg)'
+      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear forwards"
     }, 400)
 
     setTimeout(() => {
@@ -69,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
       document.getElementById("prometheos-button-btn").style.visibility = "visible"
       document.getElementById("prometheos-button-btn").style.animation = "grow-up .5s linear forwards"
-      document.getElementsByClassName('about-logo')[0].style.backgroundImage = 'url(./assets/about/prometheos-logo.svg)'
-      document.getElementsByClassName('about-logo')[0].style.animation = "appear 1s linear forwards"
+      document.getElementsByClassName('backgroundImg')[0].style.backgroundImage = 'url(./assets/about/prometheos-logo.svg)'
+      document.getElementsByClassName('backgroundImg')[0].style.animation = "appear 2s linear forwards"
     }, 400)
 
     setTimeout(() => {

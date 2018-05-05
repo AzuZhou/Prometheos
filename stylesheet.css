@@ -250,12 +250,17 @@ header .social-media img {
   flex-direction: column;
 }
 
-.about .about-logo {
+.about .about-logo .backgroundImg {
+  width: 50vw;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
   background-image: url('./assets/about/prometheos-logo.svg');
   background-repeat: no-repeat;
-  background-size: 65% 65%;
   background-position: 75% 50%;
-  animation: appear 1s linear forwards;
+  animation: appear 2s linear forwards;
 }
 
 .about .about-logo .title {
@@ -329,6 +334,7 @@ header .social-media img {
 .about .about-logo .about-buttons .upper-button button {
   overflow: hidden;
   font-size: 4.5em;
+  cursor: default !important;
 }
 
 .about .about-logo .about-buttons .upper-button img {
@@ -396,12 +402,10 @@ header .social-media img {
 
 @keyframes appear {
   from {
-    background-size: 0 0;
     opacity: 0;
   }
 
   to {
-    background-size: 65% 65%;
     opacity: 1;
   }
 }
